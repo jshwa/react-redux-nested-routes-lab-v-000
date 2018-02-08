@@ -16,7 +16,10 @@ class PetsPage extends Component {
     return (
       <div>
         <PetsList pets={this.props.pets} />
-        <Route path={`${this.props.match.url}/:petId`} component={PetsShow} />
+        <Switch>
+          <Route path={`${this.props.match.url}/:petId`} component={PetsShow} />
+          <Route path={`${this.props.match.url}/new`} component={PetsNew} />
+        </Switch>
       </div>
     )
   }
